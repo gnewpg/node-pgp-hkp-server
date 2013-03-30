@@ -3,6 +3,10 @@ var config = require("./config");
 
 module.exports = function(getKeyring, callback) {
 	var app = express();
+
+	if(config.trustProxy)
+		app.enable("trust proxy");
+
 	app.use(express.bodyParser({ maxFieldsSize: config.maxUploadSize }));
 	app.use(app.router);
 	app.use(function(req, res, next) {
