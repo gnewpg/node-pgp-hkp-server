@@ -23,7 +23,10 @@ module.exports = function(getKeyring, callback) {
 	app.get("/pks/lookup", listener(require("./lookup")));
 	app.post("/pks/add", listener(require("./add")));
 
-	app.listen(config.port);
+	if(config.address)
+		app.listen(config.port, config.address);
+	else
+		app.listen(config.port);
 
 	callback();
 };
