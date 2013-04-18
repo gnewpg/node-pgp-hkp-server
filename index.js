@@ -19,6 +19,12 @@ module.exports = function(getKeyring, callback) {
 				if(err)
 					return next(err);
 
+				var endBkp = res.end;
+				res.end = function() {
+					keyring.done();
+					return endBkp.apply(this, arguments);
+				};
+
 				cb(keyring, req, res, next);
 			});
 		};
