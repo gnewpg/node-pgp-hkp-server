@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cdauth/node-pgp-hkp-server.git"
+    "url": "https://github.com/gnewpg/node-pgp-hkp-server.git"
   },
   "license": "MIT",
   "description": "An implementation of a PGP Key Server using the HKP protocol.",
   "dependencies": {
-	  "node-pgp": "git://github.com/cdauth/node-pgp.git",
+	  "node-pgp": "git://github.com/gnewpg/node-pgp.git",
 	  "async": "x.x.x",
 	  "express": "3.x"
   }
